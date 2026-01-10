@@ -84,6 +84,45 @@ static JSONContent* __readJSONFile(const char* filepath)
     return content;
 }
 
+static void __skipWhitespace(JSONContent* content)
+{
+    while(content->position < content->length)
+    {
+        char c = content->buffer[content->position];
+        if (c == ' ' || c == '\n' || c == '\r' || c == '\t')
+            content->position++;
+        else
+            break;
+    }
+}
+
+static void __parseValue(JSONContent* content);
+
+static void __parseObject(JSONContent* content)
+{
+    (void)content;
+}
+
+static void __parseArray(JSONContent* content)
+{
+    (void)content;
+}
+
+static void __parseString(JSONContent* content)
+{
+    (void)content;
+}
+
+static void __parseNumber(JSONContent* content)
+{
+    (void)content;
+}
+
+static void __parseValue(JSONContent* content)
+{
+    (void)content;
+}
+
 static JSON* __parseJSON(JSONContent* content)
 {
     (void)content;
@@ -104,8 +143,6 @@ JSON* parseJSON(const char* filepath)
     free(content->buffer);
     free(content);
     content = NULL;
-
-    //TODO
 
     return root;
 }
