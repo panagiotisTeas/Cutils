@@ -31,7 +31,7 @@ typedef struct
     JSONType        type;
     union
     {
-        struct JSON*    json; //* Object/Array/null
+        struct JSON*    json; // Object/Array/null
         char*           string;
         double          number;
         bool            boolean;

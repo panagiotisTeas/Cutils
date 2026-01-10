@@ -1,2 +1,4 @@
-tests
+.vscode
 build
+logs
+tests
